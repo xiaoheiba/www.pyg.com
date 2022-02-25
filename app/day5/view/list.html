@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th><input type="checkbox" class="checkAll"></th>
+        <th>ID</th>
+        <th>name</th>
+        <th>sex</th>
+        <th>tel</th>
+        <th>add</th>
+        <th>salary</th>
+        <th>操作</th>
+    </tr>
+    {foreach($data as $v)}
+    <tr>
+        <td><input type="checkbox" class="nav_list"></td>
+        <td>{$v['id']}</td>
+        <td>{$v['name']}</td>
+        <td>{$v['SexId']['sex']}</td>
+        <td>{$v['tel']}</td>
+        <td class="btn">{$v['add']}</td>
+        <td>{$v['salary']}</td>
+        <td><a href="del?id={$v['id']}">删除</a></td>
+    </tr>
+    {/foreach}
+</table>
+</body>
+</html>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $('.checkAll').click(function (){
+        $('.nav_list:checkbok').prop('checked',$(this).is('check'));
+    });
+    $('.btn').click(function (){
+        let user = $(this).val();
+        console.log(user)
+    });
+</script>
