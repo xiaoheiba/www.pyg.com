@@ -21,9 +21,10 @@ class Login
             //return success('success', 200, $data);
         }
 
-        public function login()
+        public function xss()
         {
-
+            $name = request()->get('name');
+            return $name;
         }
 
 }

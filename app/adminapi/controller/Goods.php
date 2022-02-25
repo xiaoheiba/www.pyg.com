@@ -143,7 +143,8 @@ class Goods
      */
     public function update(Request $request, $id)
     {
-        //
+       $data =  $request->get();
+       return $data;
     }
 
     /**

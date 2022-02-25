@@ -16,3 +16,6 @@ Route::get('getTypeData','Type/getTypeData');
 Route::get('delTypeData','Type/delTypeData');
 
 Route::post('image','File/singleFile');
+
+
+Route::get('xss','Login/xss')->middleware(\app\adminapi\middleware\Check::class);
